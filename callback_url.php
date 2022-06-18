@@ -10,7 +10,7 @@
      $mpesaResponse = file_get_contents('php://input');
  
      // log the response
-     $logFile = "M_PESAConfirmationResponse.json";
+     $logFile = "M_PESAConfirmationResponse.txt";
     
  
      // write to file
@@ -20,7 +20,7 @@
      fclose($log);
 
      //Processing the Mpesa json response Data
-     $mpesaResponse = file_get_contents('M_PESAConfirmationResponse.json');
+//      $mpesaResponse = file_get_contents('M_PESAConfirmationResponse.json');
      $callbackContent = json_decode($mpesaResponse);
 
      $Resultcode = $callbackContent->Body->stkCallback->ResultCode;
